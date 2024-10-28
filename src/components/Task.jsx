@@ -1,4 +1,4 @@
-import './Task.css';  
+import './Task.css';
 
 export default function Task({ task, onToggle, onRemove }) {
   return (
@@ -8,6 +8,7 @@ export default function Task({ task, onToggle, onRemove }) {
         type="checkbox"
         checked={task.completed}
         onChange={() => onToggle(task.id)}
+        disabled={task.completed} 
       />
       {task.name}
       <button className="remove-button" onClick={() => onRemove(task.id)}>Remove</button>
